@@ -1,0 +1,24 @@
+{
+  "name": "simple-rollup-wc-template",
+  "version": "1.0.0",
+  "description": "Простой шаблон на Rollup для веб-компонентов (не завершен)",
+  "repository": "https://github.com/newbornfrontender/simple-rollup-wc-template.git",
+  "author": "Infant Frontender <newbornfrontender@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf public/{components,*.html}",
+    "prettier": "prettier --write **/*.{html,js}",
+    "rollup": "yarn clean && cp -rv *.html public && rollup --config",
+    "rollup:watch": "yarn rollup --watch",
+    "posthtml": "posthtml *.html --output public --config posthtml.config.js",
+    "build": "yarn clean && yarn posthtml && rollup --config"
+  },
+  "devDependencies": {
+    "htmlnano": "^0.2.0",
+    "posthtml-cli": "^0.4.7",
+    "prettier": "^1.15.2",
+    "rollup": "^0.67.3",
+    "rollup-plugin-url": "^2.0.1"
+  }
+}

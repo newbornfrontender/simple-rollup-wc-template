@@ -1,0 +1,29 @@
+<!-- prettier-ignore -->
+<!doctype html>
+
+<html dir="ltr" lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Простой сайт</title>
+    <script
+      type="module"
+      src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js?module"
+    ></script>
+    <script type="module">
+      WebComponents.waitFor(() => {
+        import('/components/my-title.js');
+        import('/components/my-paragraph.js');
+      });
+    </script>
+  </head>
+
+  <body>
+    <noscript>Включите JavaScript чтобы увидеть контент</noscript>
+
+    <my-title></my-title>
+    <my-paragraph></my-paragraph>
+  </body>
+</html>
